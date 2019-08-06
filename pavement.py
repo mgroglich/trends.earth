@@ -614,7 +614,7 @@ def gettext(options):
     ('clean', 'c', 'clean out built artifacts first'),
     ('ignore_errors', 'i', 'ignore documentation errors'),
     ('language=', 'l', "which language to build (all are built by default)"),
-    ('fast', 'f', "only build english docs"),
+    ('fast', 'f', "only build english html docs"),
 ])
 def builddocs(options):
     if options.get('clean', False):
@@ -625,6 +625,9 @@ def builddocs(options):
     else:
         languages = [options.sphinx.base_language]
         languages.extend(options.plugin.translations)
+
+    print("\nBuilding changelog...")
+    build_changelog()
 
     for language in languages:
         print("\nBuilding {lang} documentation...".format(lang=language))
@@ -646,6 +649,9 @@ def builddocs(options):
             sh("sphinx-build -n -W -b html -a {sphinx_opts} {builddir}/html/{lang}".format(sphinx_opts=SPHINX_OPTS,
                 builddir=options.sphinx.builddir, lang=language))
         print("HTML Build finished. The HTML pages for '{lang}' are in {builddir}.".format(lang=language, builddir=options.sphinx.builddir))
+
+        if options.get('fast', False):
+            break
 
         # Build PDF, by first making latex from sphinx, then pdf from that
         tex_dir = "{builddir}/latex/{lang}".format(builddir=options.sphinx.builddir, lang=language)
@@ -683,3 +689,37 @@ def _localize_resources(options, language):
                 shutil.copytree(s, d)
             else:
                 shutil.copy2(s, d)
+
+
+@task
+def build_changelog(options):
+    out_txt = ['Changelog\n',
+               '======================\n',
+               '\n',
+               'This page lists the version history of |trends.earth|.\n']
+
+    with open(os.path.join(options.source_dir, 'metadata.txt'), 'r') as fin:
+        metadata = fin.readlines()
+
+    changelog_header_re = re.compile('^changelog=', re.IGNORECASE)
+    version_header_re = re.compile('^[ ]*[0-9]+(\.[0-9]+){1,2}', re.IGNORECASE)
+
+    at_changelog = False
+    for line in metadata:
+        if not at_changelog and not changelog_header_re.match(line):
+            continue
+        elif changelog_header_re.match(line):
+            line = changelog_header_re.sub('  ', line)
+            at_changelog = True
+        version_header = version_header_re.match(line)
+        if version_header:
+            version_number = version_header.group(0)
+            version_number = version_number.strip(' \n')
+            line = line.strip(' \n')
+            line = "\n`{} <https://github.com/ConservationInternational/trends.earth/releases/tag/{}>`_\n".format(line, version_number)
+            line = [line, '-----------------------------------------------------------------------------------------------------------------------------\n\n']
+        out_txt.extend(line)
+
+    out_file = '{docroot}/source/about/changelog.rst'.format(docroot=options.sphinx.docroot)
+    with open(out_file, 'w') as fout:
+        metadata = fout.writelines(out_txt)

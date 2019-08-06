@@ -650,7 +650,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../calculate.py" line="923"/>
         <source>The bounding box for the requested area (approximately {:.6n}) sq km is too large. Choose a smaller area to process.</source>
-        <translation type="unfinished"></translation>
+        <translation>La zone de délimitation de la zone demandée (environ {: 0,6n}) est trop grande. Choisissez une zone plus petite à traiter.</translation>
     </message>
 </context>
 <context>
@@ -2154,19 +2154,19 @@ p, li { white-space: pre-wrap; }
         <location filename="../gui/DlgCalculateUrbanData.ui" line="79"/>
         <source>&lt;b&gt;Impervious Surface Index (0-100)&lt;/b&gt;&lt;br&gt;
 (lower values will include low density areas)</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Indice de surface imperméable (0-100)&lt;/b&gt; &lt;br&gt; (des valeurs plus élevées réduisent la zone urbaine)</translation>
     </message>
     <message>
         <location filename="../gui/DlgCalculateUrbanData.ui" line="112"/>
         <source>&lt;b&gt;Night Time Lights Index (0-100)&lt;/b&gt;&lt;br&gt;
 (lower values will include low light areas)</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Indice d&amp;#39;éclairage nocturne (0-100)&lt;/b&gt; &lt;br&gt; (des valeurs plus élevées réduisent la zone urbaine)</translation>
     </message>
     <message>
         <location filename="../gui/DlgCalculateUrbanData.ui" line="123"/>
         <source>&lt;b&gt;Water Frequency (0-100)&lt;/b&gt;&lt;br&gt;
 (lower values will include low frequency waters)</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Fréquence de l&amp;#39;eau (0-100)&lt;/b&gt; &lt;br&gt; (des valeurs plus élevées augmentent la zone urbaine)</translation>
     </message>
     <message>
         <location filename="../gui/DlgCalculateUrbanData.ui" line="168"/>
@@ -2247,7 +2247,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../calculate_urban.py" line="154"/>
         <source>The bounding box of the requested area (approximately {:.6n} sq km) is too large. The urban area change tool can process a maximum area of 10,000 sq km at a time. Choose a smaller area to process.</source>
-        <translation type="unfinished"></translation>
+        <translation>La zone de délimitation de la zone demandée (environ {: 0,6n} km 2) est trop grande. L&amp;#39;outil de changement de zone urbaine peut traiter une superficie maximale de 10 000 km2 à la fois. Choisissez une zone plus petite à traiter.</translation>
     </message>
 </context>
 <context>

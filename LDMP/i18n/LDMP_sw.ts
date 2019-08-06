@@ -650,7 +650,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../calculate.py" line="923"/>
         <source>The bounding box for the requested area (approximately {:.6n}) sq km is too large. Choose a smaller area to process.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sanduku linalowekwa kwa eneo lililoombwa (takriban {: .6n}) sq km ni kubwa mno. Chagua sehemu ndogo ya mchakato.</translation>
     </message>
 </context>
 <context>
@@ -2154,19 +2154,19 @@ p, li { white-space: pre-wrap; }
         <location filename="../gui/DlgCalculateUrbanData.ui" line="79"/>
         <source>&lt;b&gt;Impervious Surface Index (0-100)&lt;/b&gt;&lt;br&gt;
 (lower values will include low density areas)</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Inpervious Surface Index (0-100)&lt;/b&gt; &lt;br&gt; (maadili ya juu hupunguza eneo la mijini)</translation>
     </message>
     <message>
         <location filename="../gui/DlgCalculateUrbanData.ui" line="112"/>
         <source>&lt;b&gt;Night Time Lights Index (0-100)&lt;/b&gt;&lt;br&gt;
 (lower values will include low light areas)</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Usiku wa Taa za Usiku (0-100)&lt;/b&gt; &lt;br&gt; (maadili ya juu hupunguza eneo la mijini)</translation>
     </message>
     <message>
         <location filename="../gui/DlgCalculateUrbanData.ui" line="123"/>
         <source>&lt;b&gt;Water Frequency (0-100)&lt;/b&gt;&lt;br&gt;
 (lower values will include low frequency waters)</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Frequency ya Maji (0-100)&lt;/b&gt; &lt;br&gt; (maadili ya juu huongeza eneo la mijini)</translation>
     </message>
     <message>
         <location filename="../gui/DlgCalculateUrbanData.ui" line="168"/>
@@ -2247,7 +2247,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../calculate_urban.py" line="154"/>
         <source>The bounding box of the requested area (approximately {:.6n} sq km) is too large. The urban area change tool can process a maximum area of 10,000 sq km at a time. Choose a smaller area to process.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sanduku linalowekwa la eneo lililoombwa (takribani {: .6n} sq km) ni kubwa mno. Chombo cha mabadiliko ya eneo la mijini kinaweza kutengeneza eneo la juu la kilomita 10,000 kwa wakati mmoja. Chagua sehemu ndogo ya mchakato.</translation>
     </message>
 </context>
 <context>
